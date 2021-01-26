@@ -13,9 +13,10 @@ sealed class ResourceAuth<T>(
         ResourceAuth<T>(StatusAuth.AUTHENTICATION_FAILED, null, message)
 
     class TokenExpired<T> : ResourceAuth<T>(StatusAuth.TOKEN_EXPIRED)
+    class LoggedOut<T> : ResourceAuth<T>(StatusAuth.LOGGED_OUT)
 
 
     enum class StatusAuth {
-        AUTHENTICATED, LOADING, ERROR, AUTHENTICATION_FAILED, TOKEN_EXPIRED
+        AUTHENTICATED, LOADING, ERROR, AUTHENTICATION_FAILED, TOKEN_EXPIRED, LOGGED_OUT
     }
 }

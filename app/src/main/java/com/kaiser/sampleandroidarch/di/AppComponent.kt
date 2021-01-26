@@ -16,6 +16,7 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent : AndroidInjector<BaseApplication> {
+
     @Component.Builder
     interface Builder {
         @BindsInstance

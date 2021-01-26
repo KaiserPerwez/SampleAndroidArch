@@ -32,12 +32,6 @@ class AuthActivity : DaggerAppCompatActivity() {
         authViewModel =
             ViewModelProvider(this, viewModelProviderFactory).get(AuthViewModel::class.java)
 
-        //observers
-        /*       authViewModel.userMediatorLiveData.observe(this)
-                   { user ->
-                       Log.d(TAG, "Searched User is ${user?.name ?: "No Name Available"}")
-                   }
-       */
         //Listeners
         authButton?.setOnClickListener {
             authViewModel.fetchUserDetails(1).observe(this, {
@@ -52,6 +46,8 @@ class AuthActivity : DaggerAppCompatActivity() {
                         }
                         ResourceAuth.StatusAuth.LOADING -> {
                             Log.d(TAG, "LOADING............")
+                        }
+                        else -> {
 
                         }
                     }
