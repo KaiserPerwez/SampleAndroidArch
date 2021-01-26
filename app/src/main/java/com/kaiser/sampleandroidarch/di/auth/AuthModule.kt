@@ -1,6 +1,6 @@
 package com.kaiser.sampleandroidarch.di.auth
 
-import com.kaiser.sampleandroidarch.network.auth.AuthApi
+import com.kaiser.sampleandroidarch.data.remote.api.AuthApi
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -9,5 +9,5 @@ import retrofit2.Retrofit
 class AuthModule {
 
     @Provides
-    fun provideAuthApi(retrofit: Retrofit) = retrofit.create(AuthApi::class.java)
+    fun provideAuthApi(retrofit: Retrofit): AuthApi = retrofit.create(AuthApi::class.java)
 }

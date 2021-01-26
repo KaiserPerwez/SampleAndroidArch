@@ -7,12 +7,8 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
 import com.kaiser.sampleandroidarch.R
-import com.kaiser.sampleandroidarch.utils.Constants
 import dagger.Module
 import dagger.Provides
-import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 
@@ -20,13 +16,6 @@ import javax.inject.Singleton
 class AppModule { //to contribute the instances which usually do not change throughout the app lifecycle ie app-level modules ie e.g Retrofit,Glide instance etc
 
 
-    @Provides
-    @Singleton
-    fun providesRetrofitInstance(): Retrofit =
-        Retrofit.Builder().baseUrl(Constants.BASE_URL)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
 
     @Provides
     @Singleton
