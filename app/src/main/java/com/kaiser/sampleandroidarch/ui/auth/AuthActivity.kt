@@ -1,7 +1,6 @@
 package com.kaiser.sampleandroidarch.ui.auth
 
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import com.kaiser.sampleandroidarch.R
 import com.kaiser.sampleandroidarch.viewmodels.ViewModelProviderFactory
@@ -22,7 +21,6 @@ class AuthActivity : DaggerAppCompatActivity() {
 
         authViewModel =
             ViewModelProvider(this, viewModelProviderFactory).get(AuthViewModel::class.java)
-        Log.d(TAG, "onCreate: ${authViewModel.v}")
     }
 
     companion object {
